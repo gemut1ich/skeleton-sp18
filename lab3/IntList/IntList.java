@@ -86,7 +86,7 @@ public class IntList {
             A = A.rest;
         }
 
-        A.rest = B
+        A.rest = B;
 
         //TODO:  fill in method
         return start;
@@ -112,7 +112,7 @@ public class IntList {
         if (A == null){
             return null;
         }
-        return new IntList(A.first, copyList(A.rest))
+        return new IntList(A.first, copyList(A.rest));
     }
 
 
