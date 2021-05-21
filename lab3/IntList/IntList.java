@@ -115,6 +115,37 @@ public class IntList {
         return new IntList(A.first, copyList(A.rest));
     }
 
+    public static IntList reverse(IntList A){
+//        IntList log = A;
+        if (A == null){
+            return null;
+        }
+//        IntList C;
+//        C = new IntList(A.first, null);
+//        A = A.rest;
+//        while (A != null){
+//            C = new IntList(A.first,C);
+//            A = A.rest;
+//        }
+//        A = log;
+//        while (log != null){
+//            log.first = C.first;
+//            log = log.rest;
+//            C = C.rest;
+//        }
+//        return A;
+        // A smart way from internet
+        IntList reversed = null, restOfList;
+        for (reversed = null; A!= null; A = restOfList){
+            restOfList = A.rest;
+            A.rest = reversed;
+            reversed = A;
+        }
+
+        return reversed;
+    }
+
+
 
 
 

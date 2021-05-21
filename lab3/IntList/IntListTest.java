@@ -57,13 +57,23 @@ public class IntListTest {
         assertEquals(IntList.of(1, 2, 3, 4, 5, 6), A);
     }
 
-    @Test
+    @Test(timeout = 0)
     public void testCatenate() {
         IntList A = IntList.of(1, 2, 3);
         IntList B = IntList.of(4, 5, 6);
         IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
         assertEquals(exp, IntList.catenate(A, B));
         assertEquals(IntList.of(1, 2, 3), A);
+    }
+
+    @Test
+    public void testReverse(){
+        IntList A = IntList.of(1,2,3,4);
+        IntList B = IntList.of();
+        IntList expect = IntList.of(4,3,2,1);
+        assertEquals(expect, IntList.reverse(A));
+        assertEquals(null, IntList.reverse(B));
+        assertNotEquals(IntList.of(1, 2, 3, 4), A);
     }
 
     /** If you're running this from the command line, you'll need
